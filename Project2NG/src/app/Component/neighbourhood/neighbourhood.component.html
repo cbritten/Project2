@@ -1,0 +1,78 @@
+<body>
+    <div>
+        <ol id="userinfo">
+            <li>{{welcome}} {{this.message.username}}, Rating: {{this.message.rating}}</li>
+            <!-- <li>User Id: {{message.userId}}</li> -->
+        </ol><br>
+        <ol class="buttons">
+            <li><button *ngIf=loginState (click)="adminFunction()">admin page</button></li>
+            <li><button (click)="logout()">Log out</button></li>
+        </ol>
+    </div>
+
+    <!-- <span id = "uinfo">Current User: {{this.message.username}}</span> -->
+    <div id="infobar">
+        <img id="img1" src="/assets/images/houses.jpg">
+        <h1 align="center" style = "color: black">These are your local neighbourhoods</h1><br>
+        <h2 align="center" style = "color: black">Feel free to hold click and scroll through the available neighbourhoods or click the dot
+            contols
+            below.</h2>
+        <h3 align="center" style = "color: black">On the back is information about that specific neighbourhood.</h3><br>
+        <h5 align="center" style = "color: black">Please feel enticed to leave a review about any neighbourhood you have experience residing
+            in.</h5>
+        <br>
+        
+
+    </div>
+    <div>
+        <hr style="background-color:black" />
+        <div class="row">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let n of neighborhoods; let j = index" class="slide">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <h3 class="nrating">Neighborhood Rating: {{n.neighbRating}}</h3>
+                                <div class="ntitle"><strong>Neighborhood Name: {{n.neighbName}}</strong></div>
+                                <div class="ntitle"><strong>Neighborhood Location: {{n.neighbLoc}}</strong></div>
+                                <img [src]=images[j] width=100% class="img">
+                            </div>
+                            <div class="flip-box-back" (click)="flipOver()"><br>
+                                <div class="ninfo">Population: {{n.popsqm}}</div><br>
+                                <div class="ninfo">Average Price of Rent per Month: {{n.avgprice}}</div><br>
+                                <div class="ninfo">Hospitals: {{n.hospital}}</div><br>
+                                <div class="ninfo">Places of Worship: {{n.pow}}</div><br>
+                                <div class="ninfo">Places of Education: {{n.education}}</div><br>
+                                <div class="ninfo">Grocery Stores: {{n.grocery}}</div><br>
+                                <div class="ninfo">Places of Transit: {{n.transit}}</div><br>
+                                <div class="ninfo">Airports: {{n.airports}}</div><br>
+                                <div class="ninfo">Hotels: {{n.hotels}}</div><br>
+                                <div class="ninfo">Public Services: {{n.pubsrv}}</div><br>
+                                <div class="nrate">Crime rate: {{n.crmrate}}%</div><br>
+                                <div class="nrate">Poverty Rate: {{n.povrate}}%</div><br>
+                                <div class="nrate">Homelessness Rate: {{n.homrate}}%</div>
+
+                                <nav>
+                                    <a routerLink="/allreviews" routerLinkActive="active" (click)=getNeighb(n)><button
+                                            class="revbtn">See
+                                            Reviews</button></a>
+                                    <a routerLink="/addreview" routerLinkActive="active" (click)=getNeighb(n)><button
+                                            class="revbtn">Make a
+                                            Review</button></a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--</div>-->
+            </ngx-slick-carousel>
+        </div>
+    </div>
+    <p>Is there a neighibourhood you would like to leave a review on, but don't see it here? Leave a recommendation
+        below!</p>
+    <table>
+    <tr><td>Neighbourhood name:</td> <td><input type="text" placeholder="name" [(ngModel)]="neighb_name" /></td></tr>
+    <tr><td>Neighbourhood Location:  </td> <td><input type="text" placeholder="Location" [(ngModel)]="neighb_loc" /></td></tr>
+    <button (click)="recommendNeighb()">Submit</button>
+    </table>
+</body>

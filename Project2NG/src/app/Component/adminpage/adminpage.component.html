@@ -1,0 +1,181 @@
+<div id="adminBtns">
+    <ol>
+        <li>
+            <label>Welcome {{user.username}}</label>    
+        </li>
+        <li><button (click)="showDuF()">delete user</button></li>
+        <li><button (click)="showAuF()">get All users</button></li>
+        <li><button (click)="showAnF()">add neighborhood</button></li>
+        <li><button (click)="showUnF()">update neighborhood</button></li>
+        <li><button (click)="showDnF()">delete neighborhood</button></li>
+        <li><button (click)="showDrF()">delete reviews</button></li>
+        <li><button (click)="goBack()">Back to Neighborhood</button></li>
+    </ol>
+</div>
+<div class="mforms">
+    <img id="bimg" src="/assets/images/admin.jpg" >
+    <div id="auForm" *ngIf=showAu>
+        <p>{{result}}</p>
+        <ol *ngFor="let u of uList">
+            <li>User Id: {{u.userId}}</li>
+            <li>Username: {{u.username}}</li>
+            <li>First name: {{u.fname}}</li>
+            <li>Last name: {{u.lname}}</li>
+        </ol>
+    </div>
+
+    <div id="duForm" *ngIf=showDu>
+        <p>{{result}}</p>
+        <ol *ngFor="let u of uList">
+            <li>User Id: {{u.userId}}</li>
+            <li>Username: {{u.username}}</li>
+            <li>First name: {{u.fname}}</li>
+            <li>Last name: {{u.lname}}</li>
+            <li><button (click)="deleteU(u.userId)">Delete</button></li>
+        </ol>
+    </div>
+
+    <div id="unForm" *ngIf=showUn>
+        <button (click)="previous()">previous</button>
+        <button (click)="next()">next</button>
+        <p>{{result}}</p>
+        <ol>
+            <li>Neighborhood Id: {{uNeighbId}}</li>
+        </ol>
+        <label for="">Neighborhood Name: </label>
+        <input type="text" [(ngModel)]="uNeighbName" placeholder="{{uNeighbName}}" ><br>
+
+        <label >Rating: </label>
+        <input type="text" [(ngModel)]="uNeighbRating" placeholder="{{uNeighbRating}}"><br>
+
+        <label for="">Location: </label>
+        <input type="text" [(ngModel)]="uNeighbLoc" placeholder="{{uNeighbLoc}}"><br>
+
+        <label for="">Population per square mile: </label>
+        <input type="number" [(ngModel)]="uPopsqm" placeholder="{{uPopsqm}}"><br>
+
+        <label for="">Average house price: </label>
+        <input type="number" [(ngModel)]="uAvgprice" placeholder="{{uAvgprice}}"><br>
+    
+        <label for="">Hospital: </label>
+        <input type="number" [(ngModel)]="uHospital" placeholder="{{uHospital}}"><br>
+
+        <label for="">Place of worship: </label>
+        <input type="number" [(ngModel)]="uPow" placeholder="{{uPow}}"><br>
+
+        <label for="">Education: </label>
+        <input type="number" [(ngModel)]="uEducation" placeholder="{{uEducation}}"><br>
+
+        <label for="">Grocery: </label>
+        <input type="number" [(ngModel)]="uGrocery" placeholder="{{uGrocery}}"><br>
+
+        <label for="">Transit: </label>
+        <input type="number" [(ngModel)]="uTransit" placeholder="{{uTransit}}"><br>
+
+        <label for="">Airport: </label>
+        <input type="number" [(ngModel)]="uAirports" placeholder="{{uAirports}}"><br>
+
+        <label for="">Hotels: </label>
+        <input type="number" [(ngModel)]="uHotels" placeholder="{{uHotels}}"><br>
+
+        <label for="">Public service: </label>
+        <input type="number" [(ngModel)]="uPubsrv" placeholder="{{uPubsrv}}"><br>
+
+        <label for="">Crime Rate: </label>
+        <input type="number" [(ngModel)]="uCrmrate" placeholder="{{uCrmrate}}"><br>
+
+        <label for="">Poverty rate: </label>
+        <input type="number" [(ngModel)]="uPovrate" placeholder="{{uPovrate}}"><br>
+
+        <label for="">homicide rate: </label>
+        <input type="number" [(ngModel)]="uHomrate" placeholder="{{uHomrate}}"><br>
+        <button (click)="updateNeighb(uNeighbId)">update Neighborhood</button>
+    </div>
+
+    <div id="anForm" *ngIf=showAn>
+
+        <p>{{result}}</p>
+        <label for="">Neighborhood Name: </label><br>
+        <input type="text" [(ngModel)]="neighbName" >
+
+        <label for="">Rating: </label>
+        <select id="nrate" [(ngModel)]="neighbRating">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br>
+
+        <label for="">Location: </label>
+        <input type="text" [(ngModel)]="neighbLoc" ><br>
+
+        <label for="">Population per square mile: </label>
+        <input type="number" [(ngModel)]="popsqm"><br>
+
+        <label for="">Average house price: </label>
+        <input type="number" [(ngModel)]="avgprice" ><br>
+    
+        <label for="">Hospital: </label>
+        <input type="number" [(ngModel)]="hospital" ><br>
+
+        <label for="">Place of worship: </label>
+        <input type="number" [(ngModel)]="pow" ><br>
+
+        <label for="">Education: </label>
+        <input type="number" [(ngModel)]="education" ><br>
+
+        <label for="">Grocery: </label>
+        <input type="number" [(ngModel)]="grocery"><br>
+
+        <label for="">Transit: </label>
+        <input type="number" [(ngModel)]="transit" ><br>
+
+        <label for="">Airport: </label>
+        <input type="number" [(ngModel)]="airports" ><br>
+
+        <label for="">Hotels: </label>
+        <input type="number" [(ngModel)]="hotels" ><br>
+
+        <label for="">Public service: </label>
+        <input type="number" [(ngModel)]="pubsrv" ><br>
+
+        <label for="">Crime Rate: </label>
+        <input type="number" [(ngModel)]="crmrate" ><br>
+
+        <label for="">Poverty rate: </label>
+        <input type="number" [(ngModel)]="povrate" ><br>
+
+        <label for="">homicide rate: </label>
+        <input type="number" [(ngModel)]="homrate" ><br>
+        <button (click)="addNeighb()">add Neighborhood</button>
+    </div>
+
+    <div id="dnForm" *ngIf=showDn>
+        <p>{{result}}</p>
+        <ol *ngFor="let n of nList">
+            <li>Neighborhood Id: {{n.neighbId}}</li>
+            <li>Rating: {{n.neighbRating}}</li>
+            <li>Neighborhood Location: {{n.neighbLoc}}</li>
+            <li><button (click)="deleteNeighb(n.neighbId)">Delete this</button></li>
+        </ol>
+    </div>
+
+    <div id="drForm" *ngIf=showDr>
+        <p>{{result}}</p>
+        <ol *ngFor="let r of rList">
+            <li>Review Id: {{r.revId}}</li>
+            <li>User Id: {{r.user.userId}}</li>
+            <li>Neighborhood Id: {{r.neighb.neighbId}}</li>
+            <li>Date of Review: {{r.dateOf}}</li>
+            <li><button (click)="deleteReview(r.revId)">Delete this</button></li>
+        </ol>
+        <br>        
+    </div>
+</div>

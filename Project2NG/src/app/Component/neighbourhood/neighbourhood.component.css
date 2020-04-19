@@ -1,0 +1,99 @@
+  #userinfo{
+    top: 0%;
+    position: fixed;
+    list-style: none;
+    width: 10%;
+    left:0%;
+    text-align: left;
+  }
+  #infobar{
+    background-color: rgb(163, 206, 241);
+    z-index: 1;
+    font-weight: 900;
+  }
+  #img1{
+    width: 98%;
+    height: 270px;
+    z-index: 2;
+    position: absolute;
+    opacity: 0.2;
+  }
+  ol li{
+    padding-top: 10px;
+    display: inline;
+    margin: 5px;
+  }
+  .buttons{
+    top: 0%;
+    position: fixed;
+    list-style: none;
+    display: inline;
+    right: 5%;
+  }
+  body{
+    background-color: #f2f2f2;
+  }
+  .revbtn{
+    width: 50%; 
+    position: relative; 
+  }
+  .slick-slider {  
+      position: relative;
+      width: auto;  
+      margin: auto; 
+    } 
+    .img {
+      width: 100%; 
+      height: 100%;
+    }
+    .carousel {
+      margin: auto;
+      padding: 10px;
+      position: relative; 
+      height: 60%;
+      top: 30%;
+      width: 87%; 
+      border: solid 6px darkgreen;
+    }
+    #Ntitle{
+      text-align: center;
+    }
+    .flip-box {
+      background-color: transparent;
+      width: 525px;
+      height: 500px;
+      border: 2px solid #f1f1f1;
+      perspective: 1000px;
+      position: relative;
+    }
+    .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.9s;
+      transform-style:preserve-3d;
+    }
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-box-front, .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%; 
+      backface-visibility: hidden;
+    }
+    .flip-box-front {
+      background-color: rgb(181, 225, 253);
+      height: 550px; 
+      width: 525px; 
+      color: black;
+    }
+    .flip-box-back {
+      align-self: relative;
+      width: fixed; 
+      height: fixed; 
+      background-color: rgb(202, 234, 245);
+      color: grey;
+      transform: rotateY(180deg);
+    }

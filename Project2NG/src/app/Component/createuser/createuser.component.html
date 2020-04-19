@@ -1,0 +1,61 @@
+<!-- <div *ngIf="!show" id="accountform"> -->
+  
+    <div style="max-width:500px;margin:auto;">
+        <form >
+          <h2 align="center"> User Creation Form</h2><br>
+        <!-- <input  type="text" [(ngModel)]="urollof"  placeholder="rollof" > -->
+        
+        <table style="width: 85%;">
+    
+          <!-- <tr>
+            <td>User role:</td>
+            <td><input  type="text" [(ngModel)]="urollof" value = "user" placeholder="user role" [ngModelOptions]="{standalone: true}"></td>
+          </tr> -->
+          <tr>
+            <td>Username:</td>
+            <td><input  type="text" [(ngModel)]="uname"  placeholder="username" [ngModelOptions]="{standalone: true}"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input  type="password" [(ngModel)]="upwd" placeholder="password" [ngModelOptions]="{standalone: true}" ></td>
+          </tr>
+          <tr>
+            <td>Email id:</td>
+            <td><input  type="email" [(ngModel)]="uemail"  placeholder="email" [ngModelOptions]="{standalone: true}"></td>
+          </tr>
+          <tr>
+            <td>First name:</td>
+            <td><input  type="text" [(ngModel)]="ufname"  placeholder="first name" [ngModelOptions]="{standalone: true}"></td>
+          </tr>
+          <tr>
+            <td>Last name:</td>
+            <td> <input  type="text" [(ngModel)]="ulname"  placeholder="last name" [ngModelOptions]="{standalone: true}"></td>
+          </tr>
+          <tr>
+            <td>Neighbourhood name:</td>
+            <td><input  type="text" [(ngModel)]="uneigh"  placeholder="current residing neighbourhood" [ngModelOptions]="{standalone: true}"></td>
+          </tr>
+          <tr>
+            <td>Can users send you emails:</td>
+            <td><label for="uallowemail"></label>
+              <select [(ngModel)]="uallowemail" [ngModelOptions]="{standalone: true}">
+              <option value="1">Yes, send emails to me </option>  
+              <option value="0">Don't send me emails</option>
+              </select></td>
+          </tr>
+          </table>
+          <br> 
+          <input type="submit" (click)="createAccount()" value="Submit"> 
+        </form>  
+    
+        <!-- <button routerLink="createuser">New User</button> -->
+      </div>
+
+    
+     
+    
+      
+        
+        
+      
+    

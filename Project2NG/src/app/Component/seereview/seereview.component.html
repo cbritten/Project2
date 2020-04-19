@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<button style="position: absolute; top: 10px; right: 10px;background-color:  darkgreen; color:white" (click)="logout()">Log out</button>
+<button style="position: absolute; top: 10px; right: 73px; background-color:darkgreen; color:white" (click)="backToNeighb()">neighborhood Page</button>
+
+<span id="uinfo">Current User: {{message.username}}, Rating: {{message.rating}}</span>
+<span id="ninfo">Neighbourhood Name: {{neighbMessage.neighbName}}</span>
+<img id="sideImg" src="/assets/images/sign.jpg" >
+<h3 id="title">Below are all the reviews left by other residents of this neighborhood.</h3>
+<br>
+<table id="allreviewstable">
+    <tr>
+        <th>Reviews</th>
+    </tr>
+
+    <tr *ngFor="let r of reviewList, let i = index">
+        <td>{{r.user.username}}(user rating: {{r.user.rating}}) wrote on {{r.dateOf}}:<br>
+            "{{r.info}}"<br>
+            <div id="tup"><img src="../assets/images/tup.png">{{r.tUp}}</div>
+            <div id="tdown"><img src="../assets/images/tdown.png">{{r.tDown}}</div><br><br>
+            <button (click)="displayAllComments(r.revId)">Review Comments</button><br>
+            <p>{{commReturned}}</p>
+            <textarea id="comment" rows="4" columns="200" [(ngModel)]="r.cmnt" placeholder="Enter comment here"
+                [ngModelOptions]="{standalone: true}"></textarea><br>
+            <button (click)="makeComment(r.cmnt, r.revId)">Post Comment</button>
+            <p style="margin-left: 8px; margin-right: 10px;">Was this review helpful? <button
+                    (click)="addThumbsUp(r.revId)"><i class=fa fa-folder>Yes</i></button><button
+                    (click)="addThumbsDown(r.revId)">No</button></p>
+        </td><br>
+    </tr>
+    <p *ngIf="!rempty"> There are no reviews for this particular neighborhood.</p>
+    <br>
+</table>
+<table id="allreviewstable">
+    <th>Comments</th>
+    <tr *ngFor="let c of cmntList">
+        {{c.cmnt}}
+    </tr>
+</table>

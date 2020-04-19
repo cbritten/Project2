@@ -1,0 +1,111 @@
+ol{
+    list-style-type: none;
+}
+
+#bimg{
+    position: absolute;
+    opacity: 0.8;
+    width: 80%;
+    border-radius: 25px;
+}
+button{
+    border-radius: 25px;
+}
+
+li{
+    display: inline;
+    margin: 35px;
+}
+
+#adminBtns{
+    background-image: url("/assets/images/c1.jpg");
+    border: lightblue dashed;
+    width: 80%;
+    text-align: center;
+    border-radius: 25px;
+}
+
+
+#auForm{
+    position: absolute;
+    top:20%;
+    width: 50%;
+    left: 20%;
+}
+#auForm ol{
+    border: double  lightblue ;
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+#duForm{
+    position: absolute;
+    top:20%;
+    width: 45%;
+    left: 20%; 
+}
+
+#duForm ol{
+    border: double  lightblue ;
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#auForm ol li{
+
+    padding: 10px 10px;
+}
+
+
+#anForm{
+    border: solid lightblue;
+    position: absolute;
+    top:20%;
+    width: 20%;
+    left: 30%;
+    text-align: left;
+    border-style: dashed;
+}
+
+input{
+    width: 100px;
+    background-color: lightgray;
+}
+
+#unForm{
+    border: solid lightblue;
+    position: absolute;
+    top:20%;
+    width: 30%;
+    left: 30%;
+    text-align: center;
+    border-style: dashed;
+}
+
+#dnForm{
+    border: solid lightblue;
+    position: absolute;
+    top:20%;
+    width: 45%;
+    left: 20%;
+    text-align: left;
+    border-style: dashed;
+}
+
+
+#drForm{
+    border: solid lightblue;
+    position: absolute;
+    top:20%;
+    width: 40%;
+    left: 20%;
+    border-style: dashed;
+}
+
+
+

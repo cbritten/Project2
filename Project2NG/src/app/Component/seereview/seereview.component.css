@@ -1,0 +1,40 @@
+table{
+    width: 50%;
+    margin:0% 25%;
+    border: 3.5px solid #4CAF50;
+}
+td{
+    border-collapse: 2px solid #4CAF50;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+ 
+} 
+
+#uinfo{
+    border: solid 2px lightblue; 
+    display: inline-block;
+    margin-right: 8px;
+}
+#ninfo{
+    border: solid 2px lightblue; 
+    display: inline-block;
+}
+#title{
+    text-align: center;
+}
+
+#tup{ 
+    float:left;
+}
+#tdown{
+    float:left;
+}
+
+#sideImg{
+    position:absolute;
+    top: 30%;
+    left: 7%;  
+    width: 300px;
+  }

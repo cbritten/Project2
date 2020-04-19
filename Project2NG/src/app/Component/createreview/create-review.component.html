@@ -1,0 +1,44 @@
+<span id = "uinfo">Current User: {{message.username}}, Rating: {{message.username}}</span>  
+<span id = "ninfo">Neighbourhood Name: {{neighbMessage.neighbName}}</span>
+<button style="position: absolute; top: 10px; right: 10px; background-color: darkgreen; color:white" (click)="logout()">Log out</button>
+<button style="position: absolute; top: 10px; right: 73px; background-color: darkgreen; color: white" (click)="backToNeighb()">neighborhood Page</button>
+
+<div style="max-width:550px;margin:auto;">
+    <form >
+      <h2 align="center">Please write a review about your experience in the neighborhood: {{neighbMessage.neighbName}}</h2><br>
+    
+    <table style="width: 85%;">
+      <tr>
+        <td>Comments:</td>
+        <td><label for="infor"></label>
+            <textarea id= "infor" rows="4" columns="200" [(ngModel)]="info"  placeholder="Enter comments here" [ngModelOptions]="{standalone: true}"></textarea>
+            
+      </tr>
+      <!-- <tr>
+        <td>Cleanliness:</td>
+        <td> <input  type="number" [(ngModel)]="rclean"  placeholder="Rate from 0 to 10" [ngModelOptions]="{standalone: true}" min="0" max="10"></td>
+      </tr>
+      <tr>
+        <td>Quality of life:</td>
+        <td> <input  type="number" [(ngModel)]="rqoflife"  placeholder="Rate from 0 to 10" [ngModelOptions]="{standalone: true}" min="0" max="10"></td>
+      </tr>
+      <tr>
+        <td>Safety:</td>
+        <td> <input  type="number" [(ngModel)]="rsafety"  placeholder="Rate from 0 to 10" [ngModelOptions]="{standalone: true}" min="0" max="10"></td>
+      </tr>
+      <tr>
+        <td>Amenities:</td>
+        <td> <input  type="number" [(ngModel)]="ramenities"  placeholder="Rate from 0 to 10" [ngModelOptions]="{standalone: true}" min="0" max="10"></td>
+      </tr>
+      <tr>
+        <td>Essentials:</td>
+        <td> <input  type="number" [(ngModel)]="ressentials"  placeholder="Rate from 0 to 10" [ngModelOptions]="{standalone: true}" min="0" max="10"></td>
+      </tr> -->
+      </table>
+      <br> 
+      <input type="submit" (click)="createReview()" value="Submit"> 
+    </form>  
+    <!-- <p *ngIf="!valid">Your review has not yet been submitted</p> -->
+  </div>
+
+

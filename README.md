@@ -1,2 +1,2 @@
 # Project2
-Proj2Repo
+Project 2 Repo
